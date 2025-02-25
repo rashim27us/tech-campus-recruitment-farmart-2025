@@ -161,17 +161,17 @@ def validate_date(date_string):
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         print("Usage: python extract_logs.py YYYY-MM-DD")
         sys.exit(1)
+    log_file_path = sys.argv[1]
+    target_date = sys.argv[2]
     
-    target_date = sys.argv[1]
     
     if not validate_date(target_date):
         print("Error: Date must be in YYYY-MM-DD format")
         sys.exit(1)
     
-    log_file_path = "/files/logs_2024.log"  # Replace with actual path 
     
     # Path for the output file
     output_file_path = f"output/output_{target_date}.txt"
